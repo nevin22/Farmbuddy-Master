@@ -1,0 +1,66 @@
+<ion-view view-title="My Reservations">
+
+<div class="bar bar-header">
+	   <button  style="background-color:transparent;color:#C8F7C5" class = "button icon ion-arrow-left-c" ng-click ="myGoBack()"></button>
+	   <p style="margin: auto;font-size: 1em;color:white;padding-right: 25px">My Reservation Requests</p>
+</div>
+
+<ion-content >
+	   <div ng-hide="reveal">
+	   		 
+	   		<br/><br/>
+	   		 <div class="animated fadeIn" style=" border: 1px solid #ffffff;" ng-repeat='res in myres'>
+			   		 <label class='item' style="background-color:white; margin: auto">
+				   		 	<span>
+				   		 		<p style="font-size: 10px">{{res.postdate}}</p>
+				   		 		<p style="font-size: 10px">RESERVATION STATUS : <b style="color:#c0392b">{{res.poststatus}}</b></p>
+				   		 	</span>
+				   		 	<br/>
+				   		 	<center>
+				   		 		<p style="font-size: 20px">You requested a reservation for<br/> {{res.postseller}}'s {{res.postname}}</p>
+				   		 	</center>
+			   		 </label>
+			   		 <br/>
+
+			   		 	<div style="background-color:transparent">	   		 				   		 		
+					   		<center>
+							 <button style="margin-right:6px;border: 1px solid #2E7D32;font-size:14px;padding:6px;border-radius:100%;background-color:transparent" ui-sref='selectedBuddy({buddyID: res.postsellerid})'><i style="font-size:18px;color:#809b4b" class="icon ion-android-contact placeholder-icon" ></i></button>
+							 <button  style="margin-right:6px;border: 1px solid #2E7D32;font-size:14px;padding:6px;border-radius:100%;background-color:transparent" ng-click='showcrop(res)'><i style="font-size:18px;color:#809b4b" class="icon ion-android-list placeholder-icon" ></i></button>
+							<!-- ng-click='me.res=!me.res' -->
+
+							 <button  style="border: 1px solid #2E7D32;font-size:14px;padding:6px;border-radius:100%;background-color:transparent"  ng-click='remove(res)'><i style="font-size:18px;color:#c0392b" class="icon ion-android-delete placeholder-icon" ></i></button>	   	
+
+					   		</center>	
+					   		<br/>
+					   		 <div style="border:1px solid #DCEDC8;text-align:center;background-color:#4CAF50;font-size:16px;">
+                          <center>                                 
+                           </center>
+                      </div>      
+			   			</div>
+
+			   				<!-- <div ng-show='me.res'>
+			   					Seller's Crop Info <br/>
+			   					Crop name:{{res.postname}}<br/>
+			   					Crop Location:{{res.postlocation}}<br/>
+			   					Crop Hectars:{{res.posthectars}}<br/>
+			   					Crop Plant Date:{{res.postplantdate}}<br/>
+			   					Crop Harvest Date:{{res.postharvestdate}}<br/>
+			   					Crop Info:{{res.postcropinfo}}<br/><br/>
+			   					My offer <br/>
+			   					Price:{{res.postmyoffer}}<br/>
+			   					Offer Info:{{res.postmyinfo}}
+
+			   				</div>
+ -->
+
+	   		 </div>
+	   </div>
+	  
+				<div ng-show='wew'>
+                 <center>
+                 	<br/>
+                 <h1 style="margin-top:100px;color:#C0C0C0;font-size:1.3em"> <br/><br/>You haven't sent <br/> a reservation request yet.</h1>
+                </div>  
+                </center>
+</ion-content>
+  </ion-view>

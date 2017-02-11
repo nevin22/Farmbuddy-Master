@@ -1,0 +1,39 @@
+      <ion-view cache-view="false" view-title="Sign In">
+
+      <div class="bar bar-header">
+        <button  style="background-color:transparent;color:#C8F7C5" class = "button icon ion-arrow-left-c" ng-click ="myGoBack()"></button>
+        <!--<img class="duh" src="img/crops/budy1.png" height="30" alt=""></img>-->
+      </div>
+      <br>
+      <h2 class=" kolay"style="text-align: center;margin-top:45px;">Sign In</h2><br/>
+      <form name="sign" novalidate="" ng-submit="signIn(sign)"> 
+
+         <center>
+          <div class="list">
+           
+            <label class="item item-input">
+              <i class="icon ion-ios-person-outline placeholder-icon"></i>
+              <input type="email" placeholder="Email Address" name="username" ng-model="email">
+            </label>
+            
+            <label class="item item-input">
+              <i class="icon ion-ios-locked-outline placeholder-icon"></i>
+              <input type="password" placeholder="Password" name="password" ng-model="password">
+              
+              </label>
+            </label>
+     
+             
+          </div>  
+          </center>   
+          <center>
+          <br>
+          <button class="buttonCreate" style="padding:18px;" type="submit" ng-click="Login(email,password)">
+            Sign In
+          </button>
+        <!--  <button ng-click="loginFb('facebook')" class=" button button-positive  button-block icon-left ion-social-facebook "  id="signup-button4" style="height:100%;width:85%">LOGIN WITH FACEBOOK</button>-->
+          </center>   
+        </form>   
+      </ion-content>
+      </ion-view>
+     

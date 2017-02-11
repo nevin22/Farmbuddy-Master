@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html  ng-app="farmbuddy">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+ 
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+
+ <script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
+    
+    <!-- use the existing file in the js folder -->
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+
+    <!--google map api-->
+    <script src="https://rawgit.com/Hobbule/ion-google-autocomplete/master/dist/ion-google-autocomplete.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAulRjVUy6S6lWXyiO9CwaHVlVVgcaGFJ4&libraries=places"></script> 
+
+
+    <!-- your app's js -->
+    <script src="js/App.js"></script>
+    <script src="js/ion-action-button.js"></script>
+    <script src="js/controller.js"></script>
+  </head>
+  <body ng-app="farmbuddy" class="sheet">
+
+
+
+  <ion-nav-view></ion-nav-view>
+
+
+   <!--  <ion-nav-bar class="bar-balanced">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+  -->
+
+
+  </body>
+</html>

@@ -1,0 +1,236 @@
+
+.ion-navicon
+{
+	background-color: transparent;
+	color: #7f8c8d;
+	
+}
+
+h4 .wel
+{
+	font-color: #0e4c0d;
+	font-size: 18px;
+	vertical-align: center;
+	font-family: Century Gothic;
+}
+.tabs
+{
+	background-color: #90C695 !important;
+}
+.liney
+{
+	background: url('../img/line.png') fixed;
+}
+.kolay
+{
+	color: #1E824C;
+
+}
+.bar-header {
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+}
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+    color: #1E824C;
+}
+.tabs-striped.tabs-positive .tab-item.tab-item-active, .tabs-striped.tabs-positive .tab-item.active, .tabs-striped.tabs-positive .tab-item.activated {
+margin-top: 0px !important;
+border-style: none !important;
+border-width: 0 0 0 0 !important;
+border-color: #0E8CCD !important; /* This is the color of my tab. You might want to change it to yours */
+}
+
+.bar-balanced1
+{
+	background-color: #001a00;
+}
+
+.buttonSignin
+{
+	padding: 10px;
+	background-color:#1E824C;
+	border: 1px solid #2E7D32;
+	border-radius:8px;
+	width: 85%;
+	height: 100%;
+
+
+
+}
+
+
+.space
+{
+	margin-top: 23px;
+
+}
+
+
+.buttonCreate
+{
+	padding: 10px;
+	color:#1E824C;
+	background-color: transparent;
+	border: 1px solid #1E824C;
+	border-radius: 8px;
+	font-family: url('../fonts/ostrich-regular.ttf') !important;
+	width: 85%;
+	height: 100%;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+.buttonCreate1
+{
+	padding: 10px;
+	font-color: #0e4c0d;
+	background-color: #26A65B;
+	border: 0px solid #2E7D32;
+	margin-bottom: 10px;
+}
+.buttonMenu
+{
+	padding-top: 15px;
+	font-color: #0e4c0d;
+	background-color: #C8F7C5;
+	border: 1px solid #ace278;
+	
+	border-radius: 4px;
+	width: 85%;
+	height: 100%;
+}
+.buttonMenu12
+{
+	margin-top:4px;
+	padding-top: 45px;
+	font-color: #0e4c0d;
+	background-color:#FAFAFA;
+	border: 1px solid #ace278;
+	border-radius: 2px;
+	width: 48.7%;
+	height: 150px;
+}
+.buttonMenu121
+{
+/*	padding-top: 45px;*/
+	font-color: #0e4c0d;
+	background-color:transparent;
+/*	border: 1px solid #ace278;*/
+
+/*	width: 48.7%;*/
+/*	height: 150px;*/
+}
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+    color: #1E824C;
+}
+
+.button-block1 .duh
+{
+
+height: 60px;
+margin-left: 20px;
+border-radius: 200%;
+vertical-align:middle;
+float: left;
+margin-right: 25px;
+
+
+}
+
+.bar-header
+{
+	background-color: #1E824C;;
+
+}
+.profPic
+{
+	height: 240px;
+	
+	
+}
+.cropyea1
+{
+	background: url('../img/greenfade.png') fixed;
+}
+.sidemenu-header
+{
+	background: url('../img/ambot.png') fixed;
+	opacity: 75%;
+}
+.item-input
+{
+	border-radius: 5px;
+	margin-top: 8px;
+	max-width: 85%;
+	margin-right: 5px;
+	margin-left: 5px;
+
+}
+
+
+.sheet
+{
+	background-color: #ffffff;
+	/*background: url('../img/Untitled-1.png') fixed;
+	background-attachment: fixed;
+	background-size: 100%;*/
+	
+
+}
+h4
+{
+	color: #0e4c0d;
+	font-family: Century Gothic;
+	font-weight: bold;
+
+
+}
+select {
+	width: 230px;
+	height:40px;
+	color: #1E824C; 
+    -webkit-border-radius:25px; -moz-border-radius:25px; border-radius:25px;
+}
+
+select option {
+	text-align: center;
+  background: #9CCC65; 
+  color: #fff; 
+  box-shadow: inset 20px 20px #f00
+} 
+
+select option:hover {
+  background-color: #1E824C; 
+  box-shadow: inset 20px 20px #00f;
+}
+ion-item.item:hover a {
+  background-color: slategray;
+}
+
+/* pop-up */
+.popup-head {
+
+    background-color: #1E824C;
+
+}
+
+.popup-title {
+
+    color: #C8F7C5;
+    text-align: left;
+
+}
+
+.popup-buttons .button {
+
+    background-color: #1E824C;
+    color: #C8F7C5;
+    font-size: 15px;
+
+}
+.popup-buttons .button.activated {
+
+    background-color: grey;
+
+}

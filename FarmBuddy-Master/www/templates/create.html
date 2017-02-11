@@ -1,0 +1,39 @@
+<!--[+? ^]-->   
+
+      <ion-view view-title="Registration Form">
+
+      <ion-content >
+      <div class="bar bar-header">
+        <button  style="background-color:transparent;color:#C8F7C5" class = "button icon ion-arrow-left-c" ng-click ="myGoBack()"></button>
+        <!--<img class="duh" src="img/crops/budy1.png" height="30" alt=""></img>-->
+      </div>
+      
+      <br>
+      <h3 class=" kolay"style="text-align: center;margin-top:45px;">Create New Account</h3><br/>
+      <center>
+      <div class="list">
+              
+            <label class="item item-input">
+              <i class="icon ion-ios-person-outline placeholder-icon"></i>
+              <input type="email" placeholder='Email Address' ng-model="email">
+            </label>
+
+            <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="password">
+            </label>
+
+            <label class="item item-input">
+              <input type="password" placeholder="Confirm Password" ng-model="confirmpassword">
+            </label>
+
+          </div>  
+          </center>
+
+          <center>
+          <br>
+          <button class="button buttonCreate" type="submit"  ng-click='Signup(email,password,confirmpassword)'>
+            Create Account
+          </button>
+          </center>  
+      </ion-content>
+      
