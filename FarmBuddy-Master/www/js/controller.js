@@ -37,89 +37,81 @@ if($localStorage.buddyid!=null){
   $state.go('home.menu');
 
 }
-        // Loading functions
-                $scope.show = function() {
-                    $ionicLoading.show({
-                        template: '<p>Loading...</p> <ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner>'
-                    });
-                };
+// Loading functions
+$scope.show = function() {
+  $ionicLoading.show({
+     template: '<p>Loading...</p> <ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner>'
+   });
+};
+$scope.hide = function(){
+    $ionicLoading.hide();
+};
+$scope.myGoBack = function() {
+    window.history.back();
+};
 
-                $scope.hide = function(){
-                    $ionicLoading.hide();
-                };
+//Buyer or Seller selection function
+$scope.Buyersellercategory=function(email,password,confirmpassword,choice){
 
-                $scope.myGoBack = function() {
-                    window.history.back();
-                  };
-        //Sign up function
-            $scope.Signup=function(email,password,confirmpassword){
-             
+ if(choice==null){
+   alert('Please indicate if you are a Buyer or a Seller');
+ }else{
+  if(choice=='Buyer'){
+    $scope.Signup(email,password,confirmpassword);
+  }else{
+    $scope.nextP=!$scope.nextP;
+    $scope.firstP=!$scope.firstP;
+  }
+ }
+ 
+ 
+}
+        //Register function
+            $scope.Signup=function(email,password,confirmpassword){             
                  if(email ==null || password ==null || confirmpassword==null){
                     $ionicPopup.alert({
-                        title: 'Error',
-                        
-                     });
-             
-                }else{
-                           
+                        title: 'Error',         
+                    });   
+                }else{                         
                       if(password!=confirmpassword){
                           $ionicPopup.alert({
                           title: 'Incorrect Password',
                           template: 'Your Password Does Not Match'
-                          });
-                    
+                          });                   
                       }else{
-$scope.show();
-                                                        const promise=auth.createUserWithEmailAndPassword(email,password).then(function(response){
-                                                    
-                                                       if (response != null) {
-
-                                                         rootRef.child("Buddy").child(response.uid)
-                                                         .set({
-                                                          UID: response.uid,
-                                                          });
-
-                                                         
-                                                       }
-
-
-                                                       $scope.showAlert = function() {
-                                                         var alertPopup = $ionicPopup.alert({
-                                                            title: 'Success',
-                                                            template: 'Your account has been created'
-                                                         });
-                                                       };
-
-                                                               $localStorage.buddyid = response.uid;
-                                                               $localStorage.email = response.email;
-                                                              
-                                                      $scope.hide();
-                                                      $scope.showAlert();
-                                                      $state.go('setUp');
-
-                                            }).catch(function(error){
-                                              $scope.hide();
-                                                    $scope.showAlert = function() {
-                                                 var alertPopup = $ionicPopup.alert({
-                                                    title: error.code,
-                                                    template:error.message
-                                                 });
-                                      };
-                                      $scope.showAlert();                 
-                                             });
-
-
-
-
+                          $scope.show();
+                          const promise=auth.createUserWithEmailAndPassword(email,password).then(function(response){                                                  
+                               if (response != null) {     
+                                   rootRef.child("Buddy").child(response.uid)
+                                   .set({
+                                    UID: response.uid,
+                                    });     
+                                 }
+                               $scope.showAlert = function() {
+                                 var alertPopup = $ionicPopup.alert({
+                                    title: 'Success',
+                                    template: 'Your account has been created'
+                                 });
+                               };     
+                                $localStorage.buddyid = response.uid;
+                                $localStorage.email = response.email;
+                                                                   
+                                $scope.hide();
+                                $scope.showAlert();
+                                $state.go('setUp');
+                             }).catch(function(error){
+                                    $scope.hide();
+                                    $scope.showAlert = function() {
+                                        var alertPopup = $ionicPopup.alert({
+                                        title: error.code,
+                                        template:error.message
+                                        });
+                                    };
+                                    $scope.showAlert();                 
+                             });
                       }
-
-
-                  } 
-                     
-            }
-       
-        
-
+                  }                 
+            }               
 });
 
 

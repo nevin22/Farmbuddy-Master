@@ -1,39 +1,51 @@
-<!--[+? ^]-->   
 
       <ion-view view-title="Registration Form">
 
       <ion-content >
       <div class="bar bar-header">
         <button  style="background-color:transparent;color:#C8F7C5" class = "button icon ion-arrow-left-c" ng-click ="myGoBack()"></button>
-        <!--<img class="duh" src="img/crops/budy1.png" height="30" alt=""></img>-->
       </div>
-      
       <br>
-      <h3 class=" kolay"style="text-align: center;margin-top:45px;">Create New Account</h3><br/>
+
+    <div ng-hide='firstP'>
+      <h3 class=" kolay" style="text-align: center;margin-top:45px;">Create New Account</h3><br/>
       <center>
-      <div class="list">
-              
+      <div class="list">             
             <label class="item item-input">
               <i class="icon ion-ios-person-outline placeholder-icon"></i>
               <input type="email" placeholder='Email Address' ng-model="email">
             </label>
-
             <label class="item item-input">
               <input type="password" placeholder="Password" ng-model="password">
             </label>
 
-            <label class="item item-input">
+            <label class="item item-input"> 
               <input type="password" placeholder="Confirm Password" ng-model="confirmpassword">
-            </label>
-
+            </label><br>
+            <h4>Are you a Buyer or a Seller</h4><br>          
+              <ion-radio ng-model="choice" value='Buyer'>Buyer</ion-radio>
+              <ion-radio ng-model="choice" value='Seller'>Seller</ion-radio>    
           </div>  
-          </center>
+      </center>
+       <center>
+             <br>
+             <button class="button buttonCreate"  ng-click='Buyersellercategory(email,password,confirmpassword,choice)'>
+               Next
+             </button>
+       </center>  
+    </div>
 
-          <center>
-          <br>
-          <button class="button buttonCreate" type="submit"  ng-click='Signup(email,password,confirmpassword)'>
-            Create Account
-          </button>
-          </center>  
+    <div ng-show="nextP">
+      <p>Please Enter your certificate</p>
+      <p>tsar</p>
+      <p>tsr</p>
+
+
+      <center><button class="button buttonCreate" type="submit"  ng-click='Signup(email,password,confirmpassword,choice)'>
+        Create Account
+      </button></center>
+
+
+    </div>
+
       </ion-content>
-      
