@@ -179,39 +179,52 @@ if($localStorage.buddyid!=null){
    //<--------------------------------------Home Controller------------------------------------->
 
 
-apple.controller('HomeCtrl', function($scope,$firebaseObject,$state,$window,$firebaseAuth,$localStorage) 
-{
-    var ref=firebase.database().ref();
-    var me=$firebaseObject(ref);
-    
+apple.controller('HomeCtrl', function($ionicPopup,$ionicLoading,$scope,$firebaseObject,$firebaseArray,$state,$window,$firebaseAuth,$localStorage){
+
+// Loading functions
+ $scope.show = function() {
+     $ionicLoading.show({
+        template: '<p>Verifying Admin Account ...</p><ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner>'
+     });
+ };
+$scope.hide = function(){
+     $ionicLoading.hide();
+};
+
+var ref=firebase.database().ref();
+var me=$firebaseObject(ref);
       $scope.Signout=function(){
          firebase.auth().signOut().then(function(){
-
-
-                delete $localStorage.buddyid;
-                delete $localStorage.email;
-
-                $state.go('intro');
-              
-         } ,function(error) 
-             {
-              alert('something went wrong');
-             });
+           delete $localStorage.buddyid;
+           delete $localStorage.email;
+           $state.go('intro');   
+      } ,function(error) 
+          {
+           alert('something went wrong');
+          });
       }
-
-   badgeRef=rootRef.child('Buddy').child($localStorage.buddyid);
-           badgeRef.on('value',function(snap){
-       $scope.badgecount=snap.val().badgecount;
-     })
-
+      $scope.verifyAdmin=function(){
+         $scope.show();
+        var admin=rootRef.child('Admin_Credential').child('admin_uid');
+        admin.once('value',function(snap){
        
-     
-     
+          if(snap.val() == $localStorage.buddyid){   
+            $state.go('admin');
+            $scope.hide();
+          }else{
+            $scope.hide();
+         $ionicPopup.alert({
+        title: "Failed !",
+         template:"You don't have permission to visit admin panel"
+       });
+          }
 
-
-
-      
-      
+        })        
+      }
+   badgeRef=rootRef.child('Buddy').child($localStorage.buddyid);
+     badgeRef.on('value',function(snap){
+       $scope.badgecount=snap.val().badgecount;
+     })     
 })
 
 
@@ -1492,8 +1505,6 @@ google.maps.event.addListener(map, 'center_changed', function() {
 
 
 //   <------------------------------Intro CONTROLLER ------------------------------->
-
-
 apple.controller('introCtrl',function($scope,$state,$localStorage,$ionicHistory){
 $ionicHistory.clearHistory();
 
@@ -1514,6 +1525,21 @@ $scope.croprates=$firebaseArray(ratesRef);
 
 })
 
+//   <------------------------------Admin CONTROLLER ------------------------------->
+
+apple.controller('adminCtrl',function($scope,$state,$localStorage,$firebaseArray){
+$scope.Signout=function(){
+   firebase.auth().signOut().then(function(){
+      delete $localStorage.buddyid;
+      delete $localStorage.email;
+      $state.go('intro');  
+    } ,function(error) {
+        alert('something went wrong');
+      });
+}
+
+
+})
 
 
 

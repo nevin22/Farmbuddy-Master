@@ -55,18 +55,11 @@ border-color: #0E8CCD !important; /* This is the color of my tab. You might want
 	border-radius:8px;
 	width: 85%;
 	height: 100%;
-
-
-
 }
-
-
 .space
 {
 	margin-top: 23px;
-
 }
-
 
 .buttonCreate
 {
@@ -113,13 +106,8 @@ border-color: #0E8CCD !important; /* This is the color of my tab. You might want
 }
 .buttonMenu121
 {
-/*	padding-top: 45px;*/
 	font-color: #0e4c0d;
 	background-color:transparent;
-/*	border: 1px solid #ace278;*/
-
-/*	width: 48.7%;*/
-/*	height: 150px;*/
 }
 .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
     color: #1E824C;
@@ -135,29 +123,29 @@ vertical-align:middle;
 float: left;
 margin-right: 25px;
 
-
 }
 
 .bar-header
 {
 	background-color: #1E824C;;
-
 }
+
 .profPic
 {
 	height: 240px;
-	
 	
 }
 .cropyea1
 {
 	background: url('../img/greenfade.png') fixed;
 }
+
 .sidemenu-header
 {
 	background: url('../img/ambot.png') fixed;
 	opacity: 75%;
 }
+
 .item-input
 {
 	border-radius: 5px;
@@ -165,27 +153,20 @@ margin-right: 25px;
 	max-width: 85%;
 	margin-right: 5px;
 	margin-left: 5px;
-
 }
-
 
 .sheet
 {
 	background-color: #ffffff;
-	/*background: url('../img/Untitled-1.png') fixed;
-	background-attachment: fixed;
-	background-size: 100%;*/
-	
-
 }
+
 h4
 {
 	color: #0e4c0d;
 	font-family: Century Gothic;
 	font-weight: bold;
-
-
 }
+
 select {
 	width: 230px;
 	height:40px;
@@ -229,8 +210,65 @@ ion-item.item:hover a {
     font-size: 15px;
 
 }
+
+
 .popup-buttons .button.activated {
 
     background-color: grey;
 
+}
+
+#home_logout{
+background-color: transparent; 
+font-size: 16px; 
+margin-top: 8px;
+color:#657576;
+}
+
+#home_admin{
+background-color: transparent; 
+font-size: 16px; 
+margin-top: 8px;
+color:#657576;
+}
+
+#home_menutoogle{
+color:#C8F7C5;
+}
+
+#home_menutoogle_icon{
+color:#C8F7C5;
+margin-left:5px;	
+}
+
+#home_heyabutton{
+background-color:transparent;
+float:right;
+margin: auto;
+font-size: 1em;
+color:#C8F7C5;	
+}
+
+/* admin CSS */
+#admin_header{
+background-color: #1E824c;
+}
+#admin_title{
+color:white;
+}
+#admin_body{
+padding-top: 43px;
+}
+#admin_menu1{
+background-color: #16A085;
+}
+#admin_menu2{
+background-color: #2ABB9B;
+}
+#admin_menu3{
+background-color: #86E2D5;
+}
+#admin_body a{
+	color:white;
+	text-decoration: none;
 }

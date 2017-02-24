@@ -98,9 +98,6 @@ apple.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
      
     })
 
-
-    
-
       .state('cropadd', {
         cache: false,
       url: '/CropAdd',
@@ -123,15 +120,11 @@ apple.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
     buddyID: null,
   }
 })
-
-
     .state('searchFarm', {
    cache: false,
       url: '/searchFarm',
       templateUrl: 'templates/searchFolder/searchFarm.html',
       controller: 'searchFarmCtrl'
-  
-
     })
 
   .state('searchCrop', {
@@ -241,6 +234,35 @@ apple.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
       controller:'cropratesCtrl'
     })
 
+//**************************               ADMIN Mapping
+
+    .state('admin', {
+   cache: false,
+      url: '/admin',
+      templateUrl: 'templates/adminFolder/admin.html',
+      controller: 'adminCtrl'
+    })
+
+   .state('admin_sellerRequest', {
+   cache: false,
+      url: '/admin_sellerRequest',
+      templateUrl: 'templates/adminFolder/admin_sellerRequest.html',
+      controller: 'adminCtrl'
+    })
+
+   .state('admin_ban', {
+   cache: false,
+      url: '/admin_ban',
+      templateUrl: 'templates/adminFolder/admin_ban.html',
+      controller: 'adminCtrl'
+    })
+
+   .state('admin_banList', {
+   cache: false,
+      url: '/admin_banList',
+      templateUrl: 'templates/adminFolder/admin_banList.html',
+      controller: 'adminCtrl'
+    })
   $urlRouterProvider.otherwise("/intro");
   
 });
