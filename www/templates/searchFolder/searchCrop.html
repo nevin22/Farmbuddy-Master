@@ -1,0 +1,142 @@
+
+<ion-view view-title="Search">
+<div class="bar bar-header">
+        <button  style="background-color:transparent;color:#C8F7C5" class = "button icon ion-arrow-left-c" ng-click ="myGoBack()"></button>
+        
+      </div> 
+        <ion-content overflow-scroll="true" class="padding1" >
+ 
+
+
+                     
+                     <CENTER style="background-color:#C8F7C5;padding-bottom:10px">
+                      <select ng-model='cropselected' style="width:35%;background-color:white;margin-top:55px" placeholder="Select Crop">
+                      <i style="color:#F2F1EF;" class="icon ion-leaf placeholder-icon"></i>
+                      <option value="" disabled selected>Select a Crop</option>
+                         <option>Rice</option>     
+                         <option>Corn</option>    
+                         <option>Potatoes</option>    
+                        <option>Cassava</option> 
+                        <option>Calamansi</option>  
+                        <option>Cabbage</option>  
+                        <option>Onion</option> 
+                        <option>Garlic</option> 
+                        <option>Habitchuelas</option>
+                         <option>Stringbeans</option> 
+                        <option>Carrots</option>     
+                        <option>Pineapple</option>  
+                        <option>Sugarcane</option> 
+                        <option>Eggplant</option>
+                        <option>Tomato</option>     
+                        <option>Ginger</option>     
+                        <option>Coconut</option>   
+                        <option>Squash</option>   
+                      </select>
+
+                      <button style="border-radius:50px;background-color:#f2ffe6;width:150px;height:35px;color:#1E824C;margin-top:10px" ng-click='go(cropselected)'>Select</button>
+                      </CENTER>  
+                    </div>
+    <div ng-show='no'>  
+
+      <center>
+                <img src="img/orgi.png" width="85" height="85" style="opacity:0.3;margin-top:150px"></img>
+              </center>
+    </div>
+                
+   <div ng-show='noResult'>
+      <center>
+        <h1 style="margin-top:35px;color:#C0C0C0;font-size:1.2em"> <br/>
+        <br/>There is nothing registered <br/>under the specified crop</h1>                      
+     </center>      
+   </div>
+
+ <div class="list" ng-repeat='crops in cropselectedlist' >
+                              <div  class="item item-input item-stacked-label" style="
+                                       max-width: 100%; margin-top:2px;">
+                                  
+                                     <label>
+                                        <div class="cropyea1">
+                                         
+                                          <h3 style="font-size:24px;color:#78a64a">
+                                           <i style="color:#78a64a;float:left" class="icon ion-leaf placeholder-icon"> {{crops.cropname}}</i>
+                                            </h3> 
+                                        </div>
+                                         <div style="height:100%;margin:auto; position:relative;right:-12px;background-color:#C8F7C5;float:right;margin-left:0"></div>
+
+                                              <br/>
+                                              <div>
+                                              <img style="float: left;height:200px; width:200px" ng-src='data:image/jpeg;base64,{{crops.cropimage}}' src="img/cropster.png"></img><br>
+
+                                              <button class="button button-balanced" style="white-space: initial;font-size:14px;margin-left:5px;margin-bottom:15px;" ui-sref='reservationform({cropname:crops.cropname, buddyID: crops.cropsellerid, cropID: crops.$id})'>Request Reservation</button>
+                                              </div>
+
+                                              <b style="color:#78a64a">
+                                                SELLER</b><br/>
+                                               <span class="input-label">
+
+                                                <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-person placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.cropseller}}</b></i>
+                                                </span><br/>
+
+
+                                        <div ng-show='toggle'>
+                                                <b style="color:#78a64a">
+                                                LOCATION</b><br/>
+                                               <span class="input-label">
+
+                                                <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-ios-location placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.croplocation}}</b></i>
+                                                </span><br/>
+                                            <b style="color:#78a64a">
+                                                HECTARS</b><br/>
+                                              <span class="input-label">
+
+                                                <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-map placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.crophectars}}</b></i>
+                                                </span><br/>                       
+
+                                            <b style="color:#78a64a">
+                                                ADDITIONAL INFORMATION</b><br/>
+                                              <span class="input-label">
+
+                                                <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-ios-information placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.cropinfo}}</b></i>
+                                                </span><br/>
+
+                                             <b style="color:#78a64a">
+                                                DATE PLANTED</b><br/>
+                                              <span class="input-label">
+
+                                                <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-ios-calendar-outline placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.cropplantdate | date : "dd/MMM/y"}}</b></i>
+                                                </span><br/>
+
+                                              <b style="color:#78a64a">
+                                                ESTIMATED HARVEST DATE</b><br/>
+                                              <span class="input-label">
+
+                                                <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-ios-calendar placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.cropharvestdate}}</b></i>
+                                                </span><br/>
+                                              
+
+
+                                                <b style="color:#78a64a">
+                                                POST DATE</b><br/>
+                                              <span class="input-label">
+
+                                                <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-calendar placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.croppostdate}}</b></i>
+                                                </span><br/>
+
+
+                                          
+                                          </div>
+      
+
+                                       </div>
+
+                                      </label>
+
+                                          <button class="button button-calm" style="width:100%;color: #78a64a;border: 1px solid #ace278;background-color:#C8F7C5;margin-bottom:2px;" ng-click="toggle = !toggle">{{toggle && 'Hide' || 'Show More'}}
+                                          </button>
+                                      </div>
+
+                                    </div>
+                
+
+        </ion-content>
+</ion-view>

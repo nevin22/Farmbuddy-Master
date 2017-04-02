@@ -1,0 +1,40 @@
+
+<ion-view view-title="First Time Setup">
+       <ion-content>
+        <div style="background-color:#1E824C;">
+          <br>
+         <h2 style="color:#81C784;text-align: center;margin-top:45px;">Welcome To FarmBuddy</h2>
+           <p style="color:#81C784;text-align: center;">Please fill up the following to set up your account</p><br/>
+         </div>
+       	 <center>
+          <br> <br>
+              <button class="button button-balanced" ng-click='pick()'>Select Image</button><br/><br/>
+              <img style="height:200px; width:200px " ng-src='data:image/jpeg;base64,{{image}}'>
+
+          
+   
+          <br>
+          <br>
+          <label class="item item-input">
+            <i class="icon ion-ios-person-outline placeholder-icon"></i>
+            <input type="text" placeholder="First Name" ng-model='buddy.FirstName'><br/>
+          </label>
+          <label class="item item-input">
+            <i class="icon ion-ios-person placeholder-icon"></i>
+            <input type="text" placeholder="LastName" ng-model='buddy.LastName'><br/>
+          </label>
+          <label class="item item-input">
+            <i class="icon ion-android-phone-portrait placeholder-icon"></i>
+	          <input type="tel" placeholder="Contact Number" ng-model='buddy.Contact'><br/>
+          </label>
+          <label class="item item-input">
+          <textarea placeholder="About Self" ="Text1" cols="40" rows="5" ng-model='buddy.About'></textarea><br/>
+          </label>
+          <br>
+       	  <button class="button buttonCreate" ng-click='showConfirm(buddy)'>
+           Submit
+          </button>
+          </div>
+   </center>
+        </ion-content>
+</ion-view>

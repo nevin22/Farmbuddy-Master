@@ -1,0 +1,117 @@
+<ion-view view-title="My Profile">
+        <ion-content overflow-scroll="false" >
+       
+
+
+
+
+        <div ng-hide='main'>
+
+                        <div class="row" style="height: 240px;background-color:#1E824C;">
+                               <div style="dispaly:inline-block;float:left">
+                                     <img style="border-radius:50%;height: 60%; width:130px;postition:fixed;margin-left:9px; margin-top:160px;margin-bottom:15px;" ng-src="data:image/jpeg;base64,{{buddyURL}}" src="img/40-512.png"><br>
+                               </div>
+                              <button style="border:0px;text-align:center;background-color:#26A65B;margin-left:8px;padding:13px;color:#C8F7C5;border-radius:100px;margin-top:185px;margin-bottom:4px" ng-click='change()'>
+                                  <i style="color:#C8F7C5" class="icon ion-leaf placeholder-icon"></i>
+                                  Edit Profile
+                              </button>
+                              
+                        </div>
+
+                            <div style="background-image:url(img/sht1.png);height:90px">
+                          <div class="cont animated fadeIn">
+                            <h3 style="float:left;font-size:1.5em !important;auto;margin-top:7px;margin-right:5px;margin-left:158px;color:#2E7D32;border-bottom:0px;">{{buddyFName | uppercase}}  {{buddyLName | uppercase}} </h3>
+                            </div>
+                                
+             
+                           </div>
+                           
+                            <div class="list" >
+
+                            <p style="text-align:center;padding:15px;background-color: #C8F7C5;color:#1E824C;font-size:14px;border-top:0px">
+                              
+                              Personal Information
+                            </p>
+
+
+                             <div class="item item-divider" style="visibility: hidden;display: none;">
+                             My User ID
+                             </div>
+                            <p class="item" style="visibility: hidden;display: none;color:#e74c3c">
+                             {{buddyId}}
+                            </p>
+
+                         
+                           
+                            <div style="margin-left:10px;margin-top:12px;">
+                              <p style="text-align: left;font-size:15px;color:#859596;padding:5px;">
+                                <i class="icon ion-android-person placeholder-icon"></i>
+                                Email: {{buddyEmail}}
+                                
+                               
+                              </p>
+                              <p style="text-align: left;font-size:15px;color:#859596;padding:5px;margin-top:2px;">
+                                <i class="icon ion-android-phone-portrait placeholder-icon"></i>
+                                Contact Number:
+                               {{buddyContact}}
+                             </p>
+                              <p style="text-align: left;font-size:15px;color:#859596;padding:5px;margin-top:2px;">
+                                <i class="icon ion-ios-rose placeholder-icon"></i>
+                                About:
+                                <center>
+                                <div style="border-radius:5px;border: 1px solid #BDC3C7;height: 85px;width:90%;margin-bottom:25px;margin-right:7px">
+                                    <p style="text-align: left;font-size:15px;color:#859596;margin-left:3px">  {{buddyAbout}}</p>       
+                                    <div>
+                                    </center>
+
+                          </div>
+                    </div>
+
+        </div>
+
+
+  <div ng-show='edit'>
+  <br/><br/>
+<center>
+
+           <p style="text-align:center;padding:15px;background-color: #C8F7C5;color:#1E824C;font-size:14px">                      
+           Edit Profile
+           </p>
+
+            <img style="height: 60%; width:130px;postition:fixed;margin-left:9px; margin-top:160px;margin-bottom:15px;" ng-src="data:image/jpeg;base64,{{cbuddyURL}}" src="img/40-512.png"><br>
+
+             <button class='button button-calm button-small' ng-click='changeImage()'>Update Image</button>
+
+            <label style="width:95%;" class="item item-input item-stacked-label">
+                       <p style="text-align:left">First Name</p>
+                      <input style="width:96%;margin-right:10px;background-color:#f2ffe6" type="text" Placeholder="First Name" ng-model='cbuddyFName'>
+            </label>
+                
+           <label style="width:95%;" class="item item-input item-stacked-label">
+                       <p style="text-align:left">Last Name</p>
+                      <input style="width:96%;margin-right:10px;background-color:#f2ffe6" type="text" Placeholder="Last Name" ng-model='cbuddyLName'>
+            </label>
+
+               <label style="width:95%;" class="item item-input item-stacked-label">
+                       <p style="text-align:left">Email</p>
+                      <input style="width:96%;margin-right:10px;background-color:#f2ffe6" type="text" Placeholder="email
+                      " ng-model='cbuddyEmail'>
+            </label>
+
+            <label style="width:95%;" class="item item-input item-stacked-label">
+                       <p style="text-align:left">Contact Number</p>
+                      <input style="width:96%;margin-right:10px;background-color:#f2ffe6" type="text" Placeholder="Contact Number" ng-model='cbuddyContact'>
+            </label>
+
+            <label style="width:95%;" class="item item-input item-stacked-label">
+                       <p style="text-align:left">About</p>
+                      <textarea style="width:96%;margin-right:10px;background-color:#f2ffe6" placeholder="About Self" ="Text1" cols="40" rows="5" ng-model='cbuddyAbout'></textarea>
+            </label>
+           
+
+           <br>
+          <button class='button button-balanced' ng-click='apply(cbuddyFName,cbuddyAbout,cbuddyContact,cbuddyLName,cbuddyEmail,cbuddyURL)'>Submit</button> <button class='button button-assertive' ng-click='cancel()'>Cancel</button> 
+
+   </div> 
+        </ion-content>
+</ion-view>

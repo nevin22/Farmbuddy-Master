@@ -1,0 +1,31 @@
+
+<ion-view view-title="Search">
+<div class="bar bar-header">
+        <button  style="background-color:transparent;color:#C8F7C5" class = "button icon ion-arrow-left-c" ng-click ="myGoBack()"></button>
+        <!--<img class="duh" src="img/crops/budy1.png" height="30" alt=""></img>-->
+      </div>      
+        <ion-content class="padding1" style="margin-top:55px;">
+
+
+          <center>
+      		 <label class="item item-input">
+  		    <i class="icon ion-search placeholder-icon"></i>
+ 		     <input type="text" placeholder="Enter Buddy Name"ng-model="searchBuddy">
+ 			 </label>
+
+
+      	  
+	      	  	<div class="list card animated fadeInLeft" style="width:85%;vertical-align:middle;margin-bottom:5px;border-radius:3px" ng-repeat='buddy in buddyList | filter : searchBuddy | limitTo:5'>
+              
+				      <a class="item item-avatar" ui-sref="selectedBuddy({buddyID: buddy.UID})" >
+  				      <img ng-src="data:image/jpeg;base64,{{buddy.userImage}}" src="img/40-512.png"></img>
+  				      <h2 style="text-align:left;color:#1E824C">{{buddy.firstname | uppercase}}  {{buddy.lastname | uppercase}}</h2>
+  				      <p style="text-align:left">{{buddy.about}}</p>
+    				    </a>
+  			      </div>
+      	  
+  </center>
+
+
+        </ion-content>
+</ion-view>
