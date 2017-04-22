@@ -50,22 +50,9 @@ $scope.myGoBack = function() {
     window.history.back();
 };
 
-//Buyer or Seller selection function
-$scope.Buyersellercategory=function(email,password,confirmpassword,choice){
 
- if(choice==null){
-   alert('Please indicate if you are a Buyer or a Seller');
- }else{
-  if(choice=='Buyer'){
-    $scope.Signup(email,password,confirmpassword);
-  }else{
-    $scope.nextP=!$scope.nextP;
-    $scope.firstP=!$scope.firstP;
-  }
- }
  
- 
-}
+
         //Register function
             $scope.Signup=function(email,password,confirmpassword){             
                  if(email ==null || password ==null || confirmpassword==null){
@@ -214,7 +201,7 @@ var me=$firebaseObject(ref);
           }else{
             $scope.hide();
          $ionicPopup.alert({
-        title: "Failed !",
+        title: "<center>FAILED !</center>",
          template:"You don't have permission to visit admin panel"
        });
           }
@@ -396,7 +383,9 @@ $scope.pick=function(){
                                       contactNumber:buddy.Contact,
                                       about:buddy.About,
                                       email:$localStorage.email,
-                                      userImage:$scope.image
+                                      userImage:$scope.image,
+                                      adminStatus:"0",
+                                      sellerStatus:"0"
 
                              }) 
                               
@@ -581,15 +570,14 @@ $scope.showAlert = function(crops) {
 
    //   <------------------------------ MYfarmcrop CONTROLLER ------------------------------->
 
-apple.controller('myfarmcropCtrl',function($scope,$ionicPopup,$ionicLoading,$firebaseArray,$localStorage,$cordovaCamera){
+apple.controller('myfarmcropCtrl',function($scope,$state,$ionicPopup,$ionicLoading,$firebaseArray,$localStorage,$cordovaCamera){
 
   $scope.showie = function() {
             $ionicLoading.show({
                 template: '<ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner> <br>Please Wait..'
             });
         };
-
-        $scope.hideos = function(){
+  $scope.hideos = function(){
             $ionicLoading.hide();
         };
 
@@ -602,22 +590,20 @@ var sh=rootRef.child('Buddy').child($localStorage.buddyid);
 var me=firebase.database().ref().child('Buddy');
 
    sh.once("value", function(snapshot) {
-          if(snapshot.hasChild('usercrops')){
-            $scope.hide=!$scope.hide;
+      if(snapshot.hasChild('usercrops')){
+        $scope.hide=!$scope.hide;
      
-          }
-          if(snapshot.hasChild('usercrops')){
-            $scope.show=!$scope.show;
-           
-          }
- $scope.hideos();
-          
-        });
+      }
+      if(snapshot.hasChild('usercrops')){
+        $scope.show=!$scope.show;
+       
+      }
+   $scope.hideos();       
+   });
+
 //update photo
 $scope.update=function(crop){
-
-  document.addEventListener("deviceready", function () {
-
+ document.addEventListener("deviceready", function (){
     var options = {
       quality: 75,
       destinationType: Camera.DestinationType.DATA_URL,
@@ -628,32 +614,33 @@ $scope.update=function(crop){
       popoverOptions: CameraPopoverOptions,
       saveToPhotoAlbum: false
     };
-
     $cordovaCamera.getPicture(options).then(function(imageData) {
-      //
-
-      $scope.shoes();
-      //
-      //updating process
-    croplistRef=rootRef.child('Crops').child(crop.cropname).child(crop.cropid);
-    croplistRef.update({
-      cropimage:imageData
-    })
-    cropref.child(crop.cropid).update({
-      cropimage:imageData
-    })
-
-    $scope.hideoshi();
+       $scope.shoes();
+   //updating process
+       croplistRef=rootRef.child('Crops').child(crop.cropname).child(crop.cropid);
+       croplistRef.update({cropimage:imageData})
+       cropref.child(crop.cropid).update({cropimage:imageData})
+       $scope.hideoshi();
     }, function(err) {
-      alert(err);
-    $scope.hideoshi();
+       alert(err);
+       $scope.hideoshi();
     });
-
-
-
-  }, false);
+ }, false);
 }
 
+//Check if user has been validated
+$scope.validationChecker = function(){
+  rootRef.child('Buddy').child($localStorage.buddyid).on('value',function(snap){
+    if(snap.hasChild('validatedSeller')){
+      $state.go('cropadd');  
+    }else{
+      alert("Please validate you account first before adding a crop !");
+      $state.go('validationScreen');  
+      // TODO   change the alert to Pop-up and Add loading functions :)
+    }
+
+  })
+}
 
 
 

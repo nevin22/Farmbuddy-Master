@@ -22,26 +22,19 @@
             <label class="item item-input"> 
               <input type="password" placeholder="Confirm Password" ng-model="confirmpassword">
             </label><br>
-            <h4>Are you a Buyer or a Seller</h4><br>          
-              <ion-radio ng-model="choice" value='Buyer'>Buyer</ion-radio>
-              <ion-radio ng-model="choice" value='Seller'>Seller</ion-radio>    
+        
           </div>  
       </center>
        <center>
              <br>
-             <button class="button buttonCreate"  ng-click='Buyersellercategory(email,password,confirmpassword,choice)'>
+             <button class="button buttonCreate"  ng-click='Signup(email,password,confirmpassword)'>
                Next
              </button>
        </center>  
     </div>
 
     <div ng-show="nextP">
-      <p>Please Enter your certificate</p>
-      <p>tsar</p>
-      <p>tsr</p>
-
-
-      <center><button class="button buttonCreate" type="submit"  ng-click='Signup(email,password,confirmpassword,choice)'>
+      <center><button class="button buttonCreate" type="submit"  ng-click='Signup(email,password,confirmpassword)'>
         Create Account
       </button></center>
 
