@@ -1,0 +1,92 @@
+
+<ion-view view-title="Search">
+<div class="bar bar-header">
+        <button  style="background-color:transparent;color:#C8F7C5" class = "button icon ion-arrow-left-c" ng-click ="myGoBack()"></button>
+        <!--<img class="duh" src="img/crops/budy1.png" height="30" alt=""></img>-->
+      </div>   
+        <ion-content overflow-scroll="true" class="padding1">
+
+           <div style="background-color:#1E824C;margin-top:43px;height:300px">
+              
+                    <div style=" display: block;margin: auto;text-align:center">
+                    <img style="border-radius:50%;height: 150px;  width: 150px;" ng-src="data:image/jpeg;base64,{{buddyURL}}" src="img/40-512.png">
+                    
+                    </div>
+                    <div>
+                      <p class="item1" style="text-align:center;margin-top:8px;font-size:19px;color:white;border-color:transparent">
+                         {{buddyFName | uppercase}}  {{buddyLName | uppercase}} 
+                          </p>
+                    </div>
+
+                    <div  style="text-align:center;margin-top:10px;" class="list">
+                         
+                           <p  style="text-align:center" class="item" >
+                            <i class="icon ion-ios-email placeholder-icon"></i>
+                           {{buddyEmail}}
+                          </p>
+
+                           <p  style="text-align:center" class="item" style="border-color:white" >
+                            <i class="icon ion-android-phone-portrait placeholder-icon"></i>
+                           {{buddyContact}}
+                          </p>
+                          <br/>
+                        <center>
+                               <div style="border-radius:5px;border: 1px solid #BDC3C7;height: 85px;width:90%;margin-bottom:0px;">
+                                    <p style="text-align: center;font-size:15px;color:#859596;margin-left:3px">  {{buddyAbout}}</p>       
+                              <div>
+
+                        </center>
+             
+                             
+                    </div>
+                    <center>
+                      
+               <a  style="width:90%;text-align:center;background-color:#78a64a;color:white" data-role="button" ng-click="reveal()" class="item" >Show Available Crops</a></center>
+          <div ng-hide='reveal'>
+ 
+          <div  style="margin-top:4px;"  ng-repeat='crops in buddycrops'>
+            <center> 
+              <a class="item item-avatar" data-role="button" ng-click="showAlert(crops)" style="width:95%;color:#ECF0F1" >
+                 <img src="img/download.png"></img>
+                <h2 style="text-align:left;color:#1E824C">{{crops.cropname}}</h2>
+                 <p style="text-align:left">{{crops.croplocation}}</p>
+              </a> </center>
+        </div>
+        <br/>
+        </div>
+
+        <!--                   <div ng-hide='reveal'>
+                              <div ng-repeat='crops in buddycrops'>
+                               <ul class="item item-divider"> <center>{{crops.cropname}}</center>
+                                <li class="item">
+                                  {{crops.croplocation}}
+                                </li>
+                                 <li class="item">
+                                  {{crops.crophectars}} Hectars
+                                </li>
+                                 <li class="item">
+                                {{crops.cropinfo}}
+                      
+                                </li>
+                                <button class="button button-positive" ng-click="showAlert(crops)">
+
+                            </ul>
+                                                            
+                              </div>
+
+                         </div>
+ -->
+                         <div ng-show='wew' style="border:1px ">
+                           <center>
+                             <h1 style="color:#C0C0C0;font-size:1.2em"> <br/><br/>This User Does Not <br/>Have A Registered Crop</h1>
+                            
+                           </center>
+                           <br/><br/>
+                         </div>
+  
+
+
+
+
+        </ion-content>
+</ion-view>

@@ -1,0 +1,40 @@
+<ion-view view-title="Request Reservation">
+
+	  <div class="bar bar-header">
+        <button style="background-color:transparent;color:#C8F7C5" class = "button icon ion-arrow-left-c" ng-click ="myGoBack()"></button>
+         <p style="margin: auto;font-size: 1em;color:white;padding-right: 25px">Reservation Requests</p>
+       
+        <!--<img class="duh" src="img/crops/budy1.png" height="30" alt=""></img>-->
+      </div>        
+      <ion-content>
+                     
+      <div ng-hide='reveal'>
+
+					 <ion-list>
+					  <ion-item ng-repeat="offer in reservationOffers">
+
+						    
+							<br/><br/>
+						   <center><b>{{offer.resbuyername}}</b> would like to offer <b>{{offer.resoffer}}</b> pesos for your<br/><b style="color:green">{{offer.rescropname}}</b>
+						   			   posted last {{offer.respostdate}}<br/><br/>
+						   	<h3 style="color:green">MESSAGE</h3>
+						   	 <div style="border-radius:5px;border: 1px solid #BDC3C7;height: 85px;width:90%;margin-bottom:0px;">
+						   	<p><b>{{offer.resinfo}}</b></p></div><br/>
+						   			<button style="margin-right:6px;border: 1px solid #2E7D32;font-size:14px;padding:6px;border-radius:100%;background-color:transparent" ng-click='accept(offer)'><i style="font-size:18px;color:#c0392b" class="icon ion-heart placeholder-icon" ></i></button>
+						     		<button style="margin-right:6px;border: 1px solid #2E7D32;font-size:14px;padding:6px;border-radius:100%;background-color:transparent" ng-click='remove(offer)'><i style="font-size:18px;color:#7f8c8d" class="icon ion-heart-broken placeholder-icon" ></i></button>
+						     		<button style="margin-right:6px;border: 1px solid #2E7D32;font-size:14px;padding:6px;border-radius:100%;background-color:transparent" ui-sref='selectedBuddy({buddyID: offer.resbuyerid})'><i style="font-size:18px;color:#809b4b" class="icon ion-android-contact placeholder-icon" ></i></button>
+						   </center> 						   				
+					  </ion-item>
+					</ion-list>			
+	
+					    
+    </div>    
+
+     <div ng-show='wew'>
+     	<center>
+                 <h1 style="margin-top:100px;color:#C0C0C0;font-size:1.3em"> <br/><br/><br/><br/>There are no <br/>Reservations yet.</h1>
+                </div>	
+    	</center>
+
+        </ion-content>
+</ion-view>

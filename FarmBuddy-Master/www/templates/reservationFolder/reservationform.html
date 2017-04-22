@@ -1,0 +1,31 @@
+<ion-view view-title="Request Reservation">
+        <ion-content>
+               <h3 style="color:#81C784;text-align: center;margin-top:45px;">RESERVATION REQUEST<br/> FORM</h3>
+
+				
+										<br>
+								<center>
+
+						
+					            <label style="width:95%;" class="item item-input item-stacked-label">
+					            <p style="text-align:left">Price Offer</p>
+					            <input style="width:96%;margin-right:10px;background-color:#f2ffe6" type="number" Placeholder="0" ng-model='reservation.price'>
+					         
+					          </label>
+					        
+					   
+			 					<label style="width:95%;" class="item item-input item-stacked-label">
+			 					<p style="text-align:left">OFFER INFORMATION</p>
+			 					<textarea style="width:96%;margin-right:10px;background-color:#f2ffe6" placeholder="Please specify additional information or message here" ="Text1" cols="40" rows="5" ng-model='reservation.info'></textarea>
+					             
+					          </label>
+					          		<br/>
+
+					          		</center>
+
+					          <center><button class="button buttonCreate" ng-click='submit(reservation)' ui-sref='home.reservations'>Submit</button></center>
+
+		          
+
+        </ion-content>
+</ion-view>
