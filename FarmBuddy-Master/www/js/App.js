@@ -161,6 +161,7 @@ apple.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
       views: {
         'menu-tab': {
           templateUrl: "templates/menu.html",
+          controller: 'MenuCtrl'
          
         }
       }

@@ -1528,6 +1528,46 @@ $scope.Signout=function(){
 
 })
 
+//   <------------------------------Menu CONTROLLER ------------------------------->
 
+
+apple.controller('MenuCtrl',function($scope,$state,$localStorage,$firebaseArray,$ionicPopup){
+
+var userRef=rootRef.child('Buddy').child($localStorage.buddyid);
+
+$scope.verifyUser=function(){
+ 
+    userRef.once('value',function(snap){
+   console.log('atay' +snap.val().sellerStatus);
+        if(snap.val().sellerStatus == "0"){
+
+              // When button is clicked, the popup will be shown...
+              $scope.showConfirm();
+        }else{
+            $state.go('myfarmcrop');
+        }
+     })
+}
+
+
+$scope.showConfirm = function() {
+   var confirmPopup = $ionicPopup.confirm({
+      title: 'Send Seller Request ?',
+      template: 'You need to send a request first to sell?'
+   });
+   confirmPopup.then(function(res) {
+      if(res) {
+       console.log('shet');
+      } else {
+         
+      }
+     });
+                
+};
+
+
+
+
+})
 
 
