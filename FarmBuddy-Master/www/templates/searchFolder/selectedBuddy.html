@@ -18,6 +18,12 @@
                           </p>
                     </div>
 
+                    <h1 class="text-center">{{myTitle}}</h1>
+                      <p class="text-center">Check the console to see the result</p>
+                      <div ng-repeat="i in [1,2,3,4,5]">
+                        <ionic-ratings ratingsobj='ratingsObject' index='$index'></ionic-ratings>
+                      </div>
+
                     <div  style="text-align:center;margin-top:10px;" class="list">
                          
                            <p  style="text-align:center" class="item" >

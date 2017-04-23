@@ -1,4 +1,4 @@
-var apple=angular.module('farmbuddy.controllers', ['ngStorage'])
+var apple=angular.module('farmbuddy.controllers', ['ngStorage','ionic-ratings'])
 var rootRef = firebase.database().ref();
 var storageRef = firebase.storage().ref();
 var auth=firebase.auth();
@@ -23,6 +23,8 @@ apple.directive('actualSrc', function () {
 
 
 
+
+// ionic-rating
 
 
 
@@ -415,6 +417,9 @@ $scope.buddyList = $firebaseArray(buddyRef);
                     window.history.back();
                   };
 
+
+
+
 })
 
 
@@ -509,6 +514,22 @@ var buddy=$stateParams.buddyID;
            $scope.buddyContact=snapshot.val().contactNumber;
            $scope.buddyAbout=snapshot.val().about;
            $scope.buddyEmail=snapshot.val().email; 
+
+           $scope.ratingsObject = {
+        iconOn : 'ion-ios-star',
+        iconOff : 'ion-ios-star-outline',
+        iconOnColor: 'rgb(200, 200, 100)',
+        iconOffColor:  'rgb(200, 100, 100)',
+        rating:  2,
+        minRating:1,
+        callback: function(rating) {
+          $scope.ratingsCallback(rating);
+        }
+      };
+
+      $scope.ratingsCallback = function(rating) {
+        console.log('Selected rating is : ', rating);
+      };
 
         });
 

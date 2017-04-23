@@ -1,4 +1,6 @@
-var apple=angular.module('farmbuddy.controllers', ['ngStorage'])
+
+
+var apple=angular.module('farmbuddy.controllers', ['ngStorage','ionic-ratings'])
 var rootRef = firebase.database().ref();
 var storageRef = firebase.storage().ref();
 var auth=firebase.auth();
@@ -417,7 +419,16 @@ $scope.pick=function(){
 
         //   <------------------------------ Search Buddy CONTROLLER ------------------------------->
 
-apple.controller('searchBuddyCtrl',function($scope,$state,$ionicLoading,$timeout,$ionicPopup,$firebaseArray){
+apple.controller('searchBuddyCtrl',function($ionicLoading,$scope,$state,$ionicLoading,$timeout,$ionicPopup,$firebaseArray){
+   $scope.showie = function() {
+            $ionicLoading.show({
+                template: '<ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner> <br>Loading..'
+            });
+        };
+
+        $scope.hideos = function(){
+            $ionicLoading.hide();
+        };
 
 buddyRef=firebase.database().ref().child('Buddy');
 $scope.buddyList = $firebaseArray(buddyRef);
@@ -505,8 +516,18 @@ apple.controller('searchFarmCtrl',function($scope,$state){
 
    //   <------------------------------SelectedBuddy CONTROLLER ------------------------------->
 
-apple.controller('selectedBuddyCtrl',function($scope,$state,$firebaseArray,$firebaseObject,$stateParams,$timeout,$ionicPopup,$localStorage,$ionicLoading){
+apple.controller('selectedBuddyCtrl',function($ionicLoading,$scope,$state,$firebaseArray,$firebaseObject,$stateParams,$timeout,$ionicPopup,$localStorage,$ionicLoading){
+   $scope.showie = function() {
+            $ionicLoading.show({
+                template: '<ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner> <br>Loading..'
+            });
+        };
+
+        $scope.hideos = function(){
+            $ionicLoading.hide();
+        };
 selectedBuddyRef=rootRef.child('Buddy');
+
 var buddy=$stateParams.buddyID;
 
 
@@ -521,9 +542,33 @@ var buddy=$stateParams.buddyID;
            $scope.buddyAbout=snapshot.val().about;
            $scope.buddyEmail=snapshot.val().email; 
 
-        });
+          
 
   });
+
+
+  $scope.ratingsObject = {
+    iconOn: 'ion-ios-star', //Optional
+    iconOff: 'ion-ios-star-outline', //Optional
+    iconOnColor: 'rgb(200, 200, 100)', //Optional
+    iconOffColor: 'rgb(200, 100, 100)', //Optional
+    rating: 4, //Optional
+    minRating: 0, //Optional
+    readOnly: false, //Optional
+    callback: function(rating,index) { //Mandatory    
+      $scope.ratingsCallback(rating,index);
+    }
+  };
+
+  $scope.ratingsCallback = function(rating, index) {
+    console.log('Selected rating is : ', rating, ' and index is ', index);
+  };
+
+      $scope.ratingsCallback = function(rating) {
+        console.log('Selected rating is : ', rating);
+      };
+
+        });
 
   
 
