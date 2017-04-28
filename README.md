@@ -50,7 +50,7 @@ week # (April 3 to 7 )
   all the employees were there but it seems really normal for them already.
   
   During this week also, our TL once again called for a meeting and 
-  she have given us a task in BD. The task is to create operation sheets for 
+  she have given us a BD task . The task is to create operation sheets for 
   each main and subwindow of the application. Operation sheets provides all the
   information about all the things inside a main/sub-window where operation
   may occur.
