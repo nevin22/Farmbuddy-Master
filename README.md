@@ -42,4 +42,15 @@ week # (April 3 to 7 )
   (Basic Design). 
   
   During this week, our TL was very busy communicating with the people from
-  NCOS discussing about many things.
+  NCOS discussing about many things. 
+  
+  For the first time here in the company, we OJTs are able to join the the
+  gathering of NEC employees. They held it once every month, a small gathering
+  with all the food and some entertaining stuffs. It was fun but really akward for me since
+  all the employees were there but it seems really normal for them already.
+  
+  During this week also, our TL once again called for a meeting and 
+  she have given us a task in BD. The task is to create operation sheets for 
+  each main and subwindow of the application. Operation sheets provides all the
+  information about all the things inside a main/sub-window where operation
+  may occur.
