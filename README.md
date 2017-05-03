@@ -94,3 +94,18 @@ week # (April 3 to 7 )
    2 groups and given each of the group a certain real world object and create a UML class diagram about it, and it 
    should be object oriented.
    
+  week # (March 6-10)
+  We started the first day of the week with an early session with boss RD at the video conference room. Both OJT teams 
+  presented their OOP enterpretation of the given real world objects. To be honest, I didn't really understand the
+  things which we needed to do so we ended up presenting a class diagram of an object with a horrible OOP representation.
+  Bloated classes, no encapsulation and the UML was very confusing just by looking at it. Ofcourse Boss RD was disappointed
+  but he said that he understands what's happening. So he decided to take a short pause before continuing to design pattern.
+  His plan was to make us understand the basic OOP concepts first using real world scenarios and do the same thing again and
+  again until he was satisfied.He also lectured a bit about OOP and the things which we did wrong in the presentation. 
+  After the meeting, he have given us another task which is almost the same as before but his expectations now is higher.
+  
+  As usual we continued our task which was provided by sir Pateres. He divided the parts equally to the IT members then
+  gaved some to the engineers who was already finished with theur Unit Testing. The client was also worried about the
+  project so he does email our team daily, asking about the progress and providing help if needed. Our TL also told us that they 
+  will going to japan this coming March 20 to with our NCOS client to release the project's current version.
+  but his expectations is now higher than before.
