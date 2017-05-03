@@ -151,3 +151,33 @@ week # (April 3 to 7 )
   feeling really disappointed about myself during our failed attempts since it kinda reflect us as well so our only choice is 
   to do good next time. Ofcourse everytime we're done discussing about our task, Boss RD shares some of his knowledge to us
   and gives us instructions as to how you properly do the task given.
+
+
+  week # ( March 27-31)
+  Another week have passed and we're down to our final week for the month of April. Also today, we welcomed back our 2 main
+  members Mr. Claracay and Ms. Lee Mae from a succesful business trip from Japan. Our TL immediately brought out the good
+  stuffs which each members got to enjoy. A noodle, chocolate candies, sweets and other delicous food was given to us. We gaved
+  our thanks and then ate it as we do our work. After a few hours, our TL called out a meeting so we can discuss about the
+  current progress.
+  
+  The meeting was really fun though, they talked a lot about their experiences there and all of us shared laughs. But suddenly
+  one member  bumped in and said something sad. This week was also the last week for all the subcon members from
+  alliance and fpt. We have a total of 6 subcon members, 4 of them are girls and some are really goodlooking. Who wouldn't miss 
+  something those guys by the time they move out. After the meeting, we proceed and continued working.
+  
+  It was thursday during this week, we had a meeting and one of our members asked our TL for a final lunch out before all subcons
+  go back to their respective companies, it took some time but luckily our TL have decided to go with it. After the meeting it was
+  almost lunch so we directly went out and proceed to The Walk. It's a small place located in IT park which has a lot of entertaining
+  places including some delicous food restaurants. The place which they have decided was called Ramen Dojon. It's quite an expensive
+  restaurant but we don't get to use our own money for the food so who cares. All of the members lined up inside  including 
+  Mr.Claracay's girlfriend which was also a NEC employee. After a few minutes, our orders came in. Obviously it was a bowl of ramen
+  with some delicous toppings on it. The only thing stopping us from eating this delicous food is our chopsticks, it's not that
+  hard to use but maintaining your sticks balance while carrying a bit heavy like meat was hard. Me and Alex obviously are the
+  only once who were having trouble eating while the others eat ellegantly using chopsticks. It was a really fun experience for us
+  which made me hope we can do this all the time, for free ofcourse. 
+  
+  Last day of the week came and it was finally the day for out subcons to say goodbye. Some other subcons from different team
+  developing others projects as well are saying their goodbyes to each other. It was a sad moment knowing that there will be
+  a very few remaining members in our project once they leave. Before we went home, all of us took pictures outside the office door
+  where the NEC's Logo is hanging. It was really fun to be with  these guys, i hope that i can meet some of them again in the 
+  near future.
