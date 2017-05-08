@@ -1,6 +1,4 @@
-
-
-var apple=angular.module('farmbuddy.controllers', ['ngStorage','ionic-ratings'])
+var apple=angular.module('farmbuddy.controllers', ['ngStorage'])
 var rootRef = firebase.database().ref();
 var storageRef = firebase.storage().ref();
 var auth=firebase.auth();
@@ -25,6 +23,8 @@ apple.directive('actualSrc', function () {
 
 
 
+
+// ionic-rating
 
 
 
@@ -52,22 +52,9 @@ $scope.myGoBack = function() {
     window.history.back();
 };
 
-//Buyer or Seller selection function
-$scope.Buyersellercategory=function(email,password,confirmpassword,choice){
 
- if(choice==null){
-   alert('Please indicate if you are a Buyer or a Seller');
- }else{
-  if(choice=='Buyer'){
-    $scope.Signup(email,password,confirmpassword);
-  }else{
-    $scope.nextP=!$scope.nextP;
-    $scope.firstP=!$scope.firstP;
-  }
- }
  
- 
-}
+
         //Register function
             $scope.Signup=function(email,password,confirmpassword){             
                  if(email ==null || password ==null || confirmpassword==null){
@@ -216,7 +203,7 @@ var me=$firebaseObject(ref);
           }else{
             $scope.hide();
          $ionicPopup.alert({
-        title: "Failed !",
+        title: "<center>FAILED !</center>",
          template:"You don't have permission to visit admin panel"
        });
           }
@@ -398,7 +385,9 @@ $scope.pick=function(){
                                       contactNumber:buddy.Contact,
                                       about:buddy.About,
                                       email:$localStorage.email,
-                                      userImage:$scope.image
+                                      userImage:$scope.image,
+                                      adminStatus:"0",
+                                      sellerStatus:"0"
 
                              }) 
                               
@@ -419,16 +408,7 @@ $scope.pick=function(){
 
         //   <------------------------------ Search Buddy CONTROLLER ------------------------------->
 
-apple.controller('searchBuddyCtrl',function($ionicLoading,$scope,$state,$ionicLoading,$timeout,$ionicPopup,$firebaseArray){
-   $scope.showie = function() {
-            $ionicLoading.show({
-                template: '<ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner> <br>Loading..'
-            });
-        };
-
-        $scope.hideos = function(){
-            $ionicLoading.hide();
-        };
+apple.controller('searchBuddyCtrl',function($scope,$state,$ionicLoading,$timeout,$ionicPopup,$firebaseArray){
 
 buddyRef=firebase.database().ref().child('Buddy');
 $scope.buddyList = $firebaseArray(buddyRef);
@@ -436,6 +416,9 @@ $scope.buddyList = $firebaseArray(buddyRef);
  $scope.myGoBack = function() {
                     window.history.back();
                   };
+
+
+
 
 })
 
@@ -516,18 +499,8 @@ apple.controller('searchFarmCtrl',function($scope,$state){
 
    //   <------------------------------SelectedBuddy CONTROLLER ------------------------------->
 
-apple.controller('selectedBuddyCtrl',function($ionicLoading,$scope,$state,$firebaseArray,$firebaseObject,$stateParams,$timeout,$ionicPopup,$localStorage,$ionicLoading){
-   $scope.showie = function() {
-            $ionicLoading.show({
-                template: '<ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner> <br>Loading..'
-            });
-        };
-
-        $scope.hideos = function(){
-            $ionicLoading.hide();
-        };
+apple.controller('selectedBuddyCtrl',function($scope,$state,$firebaseArray,$firebaseObject,$stateParams,$timeout,$ionicPopup,$localStorage,$ionicLoading){
 selectedBuddyRef=rootRef.child('Buddy');
-
 var buddy=$stateParams.buddyID;
 
 
@@ -544,31 +517,10 @@ var buddy=$stateParams.buddyID;
 
           
 
-  });
-
-
-  $scope.ratingsObject = {
-    iconOn: 'ion-ios-star', //Optional
-    iconOff: 'ion-ios-star-outline', //Optional
-    iconOnColor: 'rgb(200, 200, 100)', //Optional
-    iconOffColor: 'rgb(200, 100, 100)', //Optional
-    rating: 4, //Optional
-    minRating: 0, //Optional
-    readOnly: false, //Optional
-    callback: function(rating,index) { //Mandatory    
-      $scope.ratingsCallback(rating,index);
-    }
-  };
-
-  $scope.ratingsCallback = function(rating, index) {
-    console.log('Selected rating is : ', rating, ' and index is ', index);
-  };
-
-      $scope.ratingsCallback = function(rating) {
-        console.log('Selected rating is : ', rating);
-      };
-
+      
         });
+
+  });
 
   
 
@@ -626,15 +578,14 @@ $scope.showAlert = function(crops) {
 
    //   <------------------------------ MYfarmcrop CONTROLLER ------------------------------->
 
-apple.controller('myfarmcropCtrl',function($scope,$ionicPopup,$ionicLoading,$firebaseArray,$localStorage,$cordovaCamera){
+apple.controller('myfarmcropCtrl',function($scope,$state,$ionicPopup,$ionicLoading,$firebaseArray,$localStorage,$cordovaCamera){
 
   $scope.showie = function() {
             $ionicLoading.show({
                 template: '<ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner> <br>Please Wait..'
             });
         };
-
-        $scope.hideos = function(){
+  $scope.hideos = function(){
             $ionicLoading.hide();
         };
 
@@ -647,22 +598,20 @@ var sh=rootRef.child('Buddy').child($localStorage.buddyid);
 var me=firebase.database().ref().child('Buddy');
 
    sh.once("value", function(snapshot) {
-          if(snapshot.hasChild('usercrops')){
-            $scope.hide=!$scope.hide;
+      if(snapshot.hasChild('usercrops')){
+        $scope.hide=!$scope.hide;
      
-          }
-          if(snapshot.hasChild('usercrops')){
-            $scope.show=!$scope.show;
-           
-          }
- $scope.hideos();
-          
-        });
+      }
+      if(snapshot.hasChild('usercrops')){
+        $scope.show=!$scope.show;
+       
+      }
+   $scope.hideos();       
+   });
+
 //update photo
 $scope.update=function(crop){
-
-  document.addEventListener("deviceready", function () {
-
+ document.addEventListener("deviceready", function (){
     var options = {
       quality: 75,
       destinationType: Camera.DestinationType.DATA_URL,
@@ -673,32 +622,33 @@ $scope.update=function(crop){
       popoverOptions: CameraPopoverOptions,
       saveToPhotoAlbum: false
     };
-
     $cordovaCamera.getPicture(options).then(function(imageData) {
-      //
-
-      $scope.shoes();
-      //
-      //updating process
-    croplistRef=rootRef.child('Crops').child(crop.cropname).child(crop.cropid);
-    croplistRef.update({
-      cropimage:imageData
-    })
-    cropref.child(crop.cropid).update({
-      cropimage:imageData
-    })
-
-    $scope.hideoshi();
+       $scope.shoes();
+   //updating process
+       croplistRef=rootRef.child('Crops').child(crop.cropname).child(crop.cropid);
+       croplistRef.update({cropimage:imageData})
+       cropref.child(crop.cropid).update({cropimage:imageData})
+       $scope.hideoshi();
     }, function(err) {
-      alert(err);
-    $scope.hideoshi();
+       alert(err);
+       $scope.hideoshi();
     });
-
-
-
-  }, false);
+ }, false);
 }
 
+//Check if user has been validated
+$scope.validationChecker = function(){
+  rootRef.child('Buddy').child($localStorage.buddyid).on('value',function(snap){
+    if(snap.hasChild('validatedSeller')){
+      $state.go('cropadd');  
+    }else{
+      alert("Please validate you account first before adding a crop !");
+      $state.go('validationScreen');  
+      // TODO   change the alert to Pop-up and Add loading functions :)
+    }
+
+  })
+}
 
 
 
@@ -1586,6 +1536,46 @@ $scope.Signout=function(){
 
 })
 
+//   <------------------------------Menu CONTROLLER ------------------------------->
 
+
+apple.controller('MenuCtrl',function($scope,$state,$localStorage,$firebaseArray,$ionicPopup){
+
+var userRef=rootRef.child('Buddy').child($localStorage.buddyid);
+
+$scope.verifyUser=function(){
+ 
+    userRef.once('value',function(snap){
+   console.log('atay' +snap.val().sellerStatus);
+        if(snap.val().sellerStatus == "0"){
+
+              // When button is clicked, the popup will be shown...
+              $scope.showConfirm();
+        }else{
+            $state.go('myfarmcrop');
+        }
+     })
+}
+
+
+$scope.showConfirm = function() {
+   var confirmPopup = $ionicPopup.confirm({
+      title: 'Send Seller Request ?',
+      template: 'You need to send a request first to sell?'
+   });
+   confirmPopup.then(function(res) {
+      if(res) {
+       console.log('shet');
+      } else {
+         
+      }
+     });
+                
+};
+
+
+
+
+})
 
 

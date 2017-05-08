@@ -1,63 +1,41 @@
 <ion-view view-title="Admin Panel">
 
 
-<ion-side-menus> <!-- // content of the side menu -->
+<ion-side-menus> // content of the side menu
   <ion-side-menu side="left">
-       
+       <center>
        <div class="sidemenu-header">
-        <center>
          <img src="img/orgi2.png" style="width:70%;margin-top:3px;margin-bottom:3px;"></img>
-       </center>
       </div>
-      <div style="margin-left:12px;">
           <button class="button icon  ion-pie-graph" ui-sref="home.menu" id="home_logout"> &nbsp; Menu</button>
           <img src="img/line.png" style="width:100%"></img>
 
-          <button class="button icon ion-settings" ui-sref="admin" id="home_admin"> Administrator</button>
+          <button class="button icon ion-settings" ui-sref="admin" id="home_admin"> Administrator
           <img src="img/line.png" style="width:100%"></img>
 
           <button class="button icon ion-log-out" ng-click="Signout()" id="home_logout"> Log Out</button>
           <img src="img/line.png" style="width:100%"></img>
-      </div>
+       </center>   
   </ion-side-menu>
 
-<ion-side-menu-content> <!-- //main content -->
+<ion-side-menu-content> //main content
  <ion-content>
    <div class="bar bar-header" id="admin_header">
       <button class="button icon ion-navicon"  id="home_menutoogle" menu-toggle="left" ng-click="toggleLeft()"></button>
-      <p style="margin: auto;font-size: 1em;color:white;">Admin Panel</p>
+      <h1 class="title" id="admin_title">Admin Panel</h1>  
    </div>
    <div id="admin_body">
-
       <div class="list">
-         <a class="button buttonMenu121" data-role="button" style="border-radius:3px;font-size:18px;height:100px;width:100%;color:#1E824C" ui-sref="admin_sellerRequest">
-          <div style="height:100%;margin:auto; position:relative;left:-12px;width:25%;background-color:#EEEEEE;float:left;margin-left:0px">
-            <img style="margin-top:12px" src="img/acceptuser.png" height="75" alt="" > 
-          </div>
-          <div style="margin-top:30px"></div>
-          <p style="margin-left:18px;float:left">Accept Seller Request</p>
-         </a>
-
-         <a class="button buttonMenu121" data-role="button" style="border-radius:3px;font-size:18px;height:100px;width:100%;color:#1E824C" ui-sref="admin_sellerRequest">
-          <div style="height:100%;margin:auto; position:relative;left:-12px;width:25%;background-color:#EEEEEE;float:left;margin-left:0px">
-            <img style="margin-top:12px" src="img/banuser.png" height="75" alt="" > 
-          </div>
-          <div style="margin-top:30px"></div>
-          <p style="margin-left:18px;float:left">Ban User</p>
-         </a>
-
-         <a class="button buttonMenu121" data-role="button" style="border-radius:3px;font-size:18px;height:100px;width:100%;color:#1E824C" ui-sref="admin_sellerRequest">
-          <div style="height:100%;margin:auto; position:relative;left:-12px;width:25%;background-color:#EEEEEE;float:left;margin-left:0px">
-            <img style="margin-top:12px" src="img/banlist.png" height="75" alt="" > 
-          </div>
-          <div style="margin-top:30px"></div>
-          <p style="margin-left:18px;float:left">Ban List</p>
-         </a>
-
+         <div id="admin_menu1" style="height:200px;width: inherit;">
+           <a ui-sref="admin_sellerRequest">Accept Seller Request</a>
+         </div>
+         <div id="admin_menu2" style="height:200px;width: inherit;">
+           <a href="#">Ban User</a>
+         </div>
+         <div  id="admin_menu3" style="height:200px;width: inherit;">
+           <a href="#">Ban List</a>
+         </div>
       </div>
-
-       
-
    </div>
  </ion-content>
 </ion-side-menu-content>

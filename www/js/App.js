@@ -46,9 +46,6 @@ apple.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
       url: '/intro',
       templateUrl: 'templates/intro.html',
       controller:'introCtrl'
-
-      
-
     })
 
     .state('setUp',{
@@ -164,6 +161,7 @@ apple.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
       views: {
         'menu-tab': {
           templateUrl: "templates/menu.html",
+          controller: 'MenuCtrl'
          
         }
       }
@@ -263,6 +261,18 @@ apple.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) 
       templateUrl: 'templates/adminFolder/admin_banList.html',
       controller: 'adminCtrl'
     })
+
+//**************************               VALIDATION SCREEN MAP
+
+      .state('validationScreen', {
+   cache: false,
+      url: '/sellerValidation',
+      templateUrl: 'templates/validationScreen.html',
+      controller: 'validationScreenCtrl'
+    })
   $urlRouterProvider.otherwise("/intro");
   
 });
+
+
+

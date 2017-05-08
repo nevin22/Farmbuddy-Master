@@ -51,8 +51,8 @@
    </div>
 
  <div class="list" ng-repeat='crops in cropselectedlist' >
-                              <div  class="item item-input item-stacked-label" style="
-                                       max-width: 100%; margin-top:2px;">
+                              <div  class="item item-input item-stacked-label" style="background-color:#f2ffe6;
+                                       max-width: 100%; margin-top:10px;">
                                   
                                      <label>
                                         <div class="cropyea1">
@@ -64,12 +64,6 @@
                                          <div style="height:100%;margin:auto; position:relative;right:-12px;background-color:#C8F7C5;float:right;margin-left:0"></div>
 
                                               <br/>
-                                              <div>
-                                              <img style="float: left;height:200px; width:200px" ng-src='data:image/jpeg;base64,{{crops.cropimage}}' src="img/cropster.png"></img><br>
-
-                                              <button class="button button-balanced" style="white-space: initial;font-size:14px;margin-left:5px;margin-bottom:15px;" ui-sref='reservationform({cropname:crops.cropname, buddyID: crops.cropsellerid, cropID: crops.$id})'>Request Reservation</button>
-                                              </div>
-
                                               <b style="color:#78a64a">
                                                 SELLER</b><br/>
                                                <span class="input-label">
@@ -77,20 +71,30 @@
                                                 <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-person placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.cropseller}}</b></i>
                                                 </span><br/>
 
-
-                                        <div ng-show='toggle'>
-                                                <b style="color:#78a64a">
+                                              <b style="color:#78a64a">
                                                 LOCATION</b><br/>
                                                <span class="input-label">
 
                                                 <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-ios-location placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.croplocation}}</b></i>
                                                 </span><br/>
+                                                 <div class="liney" style="margin-top:4px;height:1px;margin-bottom:4px">
+                                          </div>
+                                              <b style="color:#78a64a">
+                                                ESTIMATED HARVEST DATE</b><br/>
+                                              <span class="input-label">
+
+                                                <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-ios-calendar placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.cropharvestdate}}</b></i>
+                                                </span><br/>
+                                               <div class="liney" style="margin-top:4px;height:1px;margin-bottom:4px">
+                                          </div>
+                                        
+                                        <div ng-show='toggle'>
                                             <b style="color:#78a64a">
                                                 HECTARS</b><br/>
                                               <span class="input-label">
 
                                                 <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-map placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.crophectars}}</b></i>
-                                                </span><br/>                       
+                                                </span><br/>
 
                                             <b style="color:#78a64a">
                                                 ADDITIONAL INFORMATION</b><br/>
@@ -106,15 +110,6 @@
                                                 <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-ios-calendar-outline placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.cropplantdate | date : "dd/MMM/y"}}</b></i>
                                                 </span><br/>
 
-                                              <b style="color:#78a64a">
-                                                ESTIMATED HARVEST DATE</b><br/>
-                                              <span class="input-label">
-
-                                                <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-ios-calendar placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.cropharvestdate}}</b></i>
-                                                </span><br/>
-                                              
-
-
                                                 <b style="color:#78a64a">
                                                 POST DATE</b><br/>
                                               <span class="input-label">
@@ -122,18 +117,26 @@
                                                 <i style="margin-bottom:7px;color:grey;float:left" class="icon ion-calendar placeholder-icon"><b style="font-weight:normal;margin-left:20px">{{crops.croppostdate}}</b></i>
                                                 </span><br/>
 
+                                            <span style="color:#78a64a"  class="input-label"><b>IMAGE OF THE CROP</b> <br/>
+                                             
 
-                                          
-                                          </div>
-      
+                                              <center>
+                                      <img style="height:200px; width:250px" ng-src='data:image/jpeg;base64,{{crops.cropimage}}' src="img/cropster.png"><br>
+                                
+                                            
 
+                                             <center>
                                        </div>
+                                       <br/>
+                                      
+                                          <button class="button button-calm" style="color: #78a64a;border: 1px solid #ace278;background-color:#C8F7C5;margin-bottom:15px;" ng-click="toggle = !toggle">{{toggle && 'Hide' || 'Show More'}}</button>
+  
+                                          
+                                       </center>
+                                       
 
                                       </label>
-
-                                          <button class="button button-calm" style="width:100%;color: #78a64a;border: 1px solid #ace278;background-color:#C8F7C5;margin-bottom:2px;" ng-click="toggle = !toggle">{{toggle && 'Hide' || 'Show More'}}
-                                          </button>
-                                      </div>
+                                      <button class="button button-balanced" style="white-space: initial;font-size:14px;margin-left:5px;margin-bottom:15px;" ui-sref='reservationform({cropname:crops.cropname, buddyID: crops.cropsellerid, cropID: crops.$id})'>Request Reservation</button>
 
                                     </div>
                 
